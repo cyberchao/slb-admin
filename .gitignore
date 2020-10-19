@@ -18,7 +18,7 @@ selenium-debug.log
 *.sln
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+flask-server/__pycache__/
 *.py[cod]
 *$py.class
 
