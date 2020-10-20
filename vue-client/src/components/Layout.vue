@@ -2,7 +2,7 @@
   <el-container>
     <el-aside width="200px">
       <el-row style="height: 100%;">
-        <el-col :span="24" style="height: 100%;">
+        <el-col :span="24" style="height: 100%;"  class="sideBar">
           <div
             style="height: 60px;line-height: 60px;background: gold;
     font-size: x-large;"
@@ -38,26 +38,22 @@
             <el-submenu index="1">
               <template slot="title">
                 <i class="el-icon-location"></i>
-                <span>导航一</span>
+                <span>集群管理</span>
               </template>
               <el-menu-item-group>
-                <template slot="title">分组一</template>
-                <el-menu-item index="1-1">选项1</el-menu-item>
-                <el-menu-item index="1-2">选项2</el-menu-item>
+                <el-menu-item index="1-1">nginx-ssl</el-menu-item>
+                <el-menu-item index="1-2">nginx-bc</el-menu-item>
+                <el-menu-item index="1-2">nginx-fs</el-menu-item>
+                <el-menu-item index="1-2">nginx-webii</el-menu-item>
+                <el-menu-item index="1-2">nginx-ca</el-menu-item>
+                <el-menu-item index="1-2">nginx-proxy</el-menu-item>
               </el-menu-item-group>
-              <el-menu-item-group title="分组2">
-                <el-menu-item index="1-3">选项3</el-menu-item>
-              </el-menu-item-group>
-              <el-submenu index="1-4">
-                <template slot="title">选项4</template>
-                <el-menu-item index="1-4-1">选项1</el-menu-item>
-              </el-submenu>
             </el-submenu>
-            <el-menu-item index="2">
-              <i class="el-icon-menu"></i>
+            <el-menu-item index="settings">
+              <i class="el-icon-setting"></i>
               <span slot="title">设置</span>
             </el-menu-item>
-            <el-menu-item index="3">
+            <el-menu-item index="logging">
               <i class="el-icon-setting"></i>
               <span slot="title">操作日志</span>
             </el-menu-item>
@@ -97,7 +93,8 @@ export default {
   }
 };
 </script>
-<style>
+
+<style scoped>
 .el-header,
 .el-footer {
   background-color: #b3c0d1;
@@ -115,16 +112,10 @@ export default {
   line-height: 200px;
 }
 
-.el-main {
-  background-color: #e9eef3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-}
 
 body .el-container {
-  margin-bottom: 40px;
   height: 100%;
+  overflow-y: hidden;
 }
 
 .el-container .el-aside {
@@ -147,4 +138,12 @@ body .el-container {
   top: 30px;
   left: 60px;
 }
+.sideBar {
+  display: flex;
+  flex-direction: column;
+}
+.sideBar ul{
+  flex: 1;
+}
+
 </style>
